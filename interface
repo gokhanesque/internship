@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>INTERNSHIP</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="css/styleslider.css" type="text/css" />
+<script src="js/modernizr.custom.28468.js" type="text/javascript"></script>
+<noscript><link rel="stylesheet" type="text/css" href="css/nojs.css" /></noscript>
+</head>
+
+<body>
+<div class="container">
+
+<div id="da-slider" class="da-slider">
+
+<div id="logo"><a href="index.html"><img src="images/logo.png" width="250" height="126" alt="" /></a>
+</div>
+
+<div class="menu">
+<ul id="menu">
+<li><a href="index.html">ANASAYFA</a></li>
+<li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+<li><a href="urunler.html">ÃœRÃœNLER</a></li>
+<li><a href="servisler.html">SERVÄ°SLER</a></li>
+<li><a href="http://blog.sym.com.tr/" target="_blank">BLOG</a></li>
+<li><a href="iletisim.html">Ä°LETÄ°ÅÄ°M</a></li>
+</ul>
+</div>
+
+<div class="da-slide">
+<h2>Warm welcome</h2>
+<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove..</p>
+<a href="#" class="da-link">Read more</a>
+</div>
+
+<div class="da-slide">
+<h2>Easy management</h2>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+<a href="#" class="da-link">Read more</a>
+</div>
+
+<div class="da-slide">
+<h2>Revolution</h2>
+<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+<a href="#" class="da-link">Read more</a>
+</div>
+
+<div class="da-slide">
+<h2>Quality Control</h2>
+<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+<a href="#" class="da-link">Read more</a>
+</div>
+
+<nav class="da-arrows">
+	<span class="da-arrows-prev"></span>
+	<span class="da-arrows-next"></span>
+</nav>
+</div>
+
+        
+<div class="aboutustext">
+<p>
+SYM, sonuÃ§ odaklÄ± Ã§alÄ±ÅŸan bir yazÄ±lÄ±m evidir. Mobil ve Internet giriÅŸim fikirleri ile yazÄ±lÄ±m projelerini Ã¼rÃ¼n ve servislere dÃ¶nÃ¼ÅŸtÃ¼rÃ¼rken ihtiyaÃ§ duyduÄŸunuz teknik desteÄŸi saÄŸlÄ±yoruz.
+</p>
+</div>
+
+<div class="services">
+<div class="service" >
+<a href="#"><img src="images/hizmet1.png" width="265" height="193" alt=""/></a>
+<h1>DANIÅMANLIK</h1>
+<h2>â€œEkibinizi gÃ¼Ã§lendirelimâ€</h2>
+<p> Ä°htiyaÃ§ duyduÄŸunuz teknik danÄ±ÅŸmanlÄ±k konularÄ± ile daha genel konularda (Ã¶r: yazÄ±lÄ±m geliÅŸtirme kÃ¼ltÃ¼rÃ¼ oluÅŸturmak) eÄŸitim, mentorluk ve koÃ§luk hizmetleri.</p>
+</div>
+<div class="service">
+<a href="#"><img src="images/hizmet2.png" width="265" height="193" alt=""/></a>
+<h1>GELÄ°ÅTÄ°RME</h1>
+<h2>â€œBirlikte yapalÄ±mâ€</h2>
+<p>Fikrinizin/Projenizin ekibimiz tarafÄ±ndan Ã¼rÃ¼n ve servislere dÃ¶nÃ¼ÅŸmesi iÃ§in geliÅŸtirme hizmetleri.</p>
+</div>
+<div class="service">
+<a href="#"><img src="images/hizmet3.png" width="265" height="193" alt=""/></a>
+<h1>DESTEK</h1>
+<h2>â€œÄ°ÅŸiniz problemsiz bÃ¼yÃ¼sÃ¼nâ€</h2>
+<p>ÃœrÃ¼n ve servislerinizin Ã§alÄ±ÅŸÄ±r kalmasÄ± (gÃ¼ncelleme, yedekleme, v.b.), mÃ¼ÅŸteri sayÄ±nÄ±zla orantÄ±lÄ± olarak Ã¶lÃ§eklendirilmesi, kesintisiz Ã§alÄ±ÅŸma ve felaket yÃ¶netimi konularÄ±nda bakÄ±m ve destek hizmetleri.</p>
+</div>
+</div>
+
+<div class="lineback">
+<div class="line"></div>
+<div class="lineicon"><img src="images/lineicon1.png" width="35" height="32" alt=""  /></div>
+<div class="line" style="margin"></div>
+</div>
+
+<div class="features">
+<h1>SYM YAZILIM VE BÄ°LÄ°ÅÄ°M HÄ°ZMETLERÄ°</h1>
+<div class="features1"><img src="images/features1.png" width="300" height="162" alt="" /></div>
+<h2 style="margin-top:40px;">SYM YazÄ±lÄ±m, Kurumsal ve Mobil uygulama Ã§Ã¶zÃ¼mlerine odaklanmÄ±ÅŸtÄ±r. </h2>
+<p>BugÃ¼nÃ¼n dijital ekonomi ortamÄ±nda, kurumlar BT altyapÄ±larÄ±na gÃ¼venmek zorunda. Ancak, SanallaÅŸtÄ±rma ve Esnek donanÄ±m Ã‡Ã¶zÃ¼mleri sayesinde gÃ¼venilir BT altyapÄ±larÄ± artÄ±k hayal deÄŸil. SYM olarak, IBM, Microsoft ve vmware iÅŸ ortaklÄ±ÄŸÄ±yla kurumlar iÃ§in BT altyapÄ± sanallaÅŸtÄ±rma, iÅŸ sÃ¼rekliliÄŸi ve sistem konsolidasyonu Ã§Ã¶zÃ¼mleri sunuyoruz.</p>
+</div>       
+
+<div class="features" style="height:185px;">
+<h2>YaptÄ±klarÄ± iÅŸi gerÃ§ekten seven bir ekip.</h2>
+<p> YaptÄ±ÄŸÄ±mÄ±z iÅŸi seven, iÅŸimizde uzman, eÄŸitime ve yeniliÄŸe aÃ§Ä±k, yaptÄ±ÄŸÄ±mÄ±z her projede en iyiyi arayan, tasarÄ±mcÄ± ve geliÅŸtiricilerden oluÅŸan bir ekibiz. BaÅŸarÄ± ve sonuÃ§ odaklÄ± Ã§alÄ±ÅŸmamÄ±z sonucunda Boni, KubiMobi ve Yemekguru gibi giriÅŸim fikirleri ile Turkcell, Vodafone gibi bÃ¼yÃ¼k markalarÄ±n ve pek Ã§ok ÅŸirketin projelerini hayata geÃ§irmeye yardÄ±mcÄ± olduk.</p>
+<div class="features2"><img src="images/features2.png" width="226" height="123"alt="" /></div>
+</div>    
+       
+<div class="lineback">
+<div class="line"></div>
+<div class="lineicon"><img src="images/lineicon3.png" width="35" height="32" alt="" /></div>
+<div class="line" style="margin"></div>
+</div>      
+
+<div class="projects">
+<h1>PROJELERÄ°MÄ°Z</h1>
+<div class="projectimg"><img src="images/projectimg.png" width="275" height="186" alt="" /></div>
+<h2>GeliÅŸtirme, Destek ve DanÄ±ÅŸmanlÄ±k alanlarÄ±ndaki projelerimizden bazÄ±larÄ±.</h2>
+<p>SYM YazÄ±lÄ±m yÃ¼klenici/alt-yÃ¼klenici kÃ¼ltÃ¼rÃ¼ne sahiptir. Bir projeye Sistem GÃ¶sterim ve GeliÅŸtirme sÃ¼reci ile baÅŸlÄ±yoruz. Ancak, ihtiyaÃ§ halinde AlÄ±m (Kavram GeliÅŸtirme, Sistem TanÄ±mlama, Teknoloji DeÄŸerlendirme, vb.) sÃ¼reÃ§lerinde de danÄ±ÅŸmanlÄ±k hizmeti sunuyoruz.</p>
+</div>
+        
+<div class="lineback">
+<div class="line"></div>
+<div class="lineicon"><img src="images/lineicon2.png" width="35" height="32" alt="" /></div>
+<div class="line" style="margin"></div>
+</div>           
+
+<div class="testimonials">
+<h1>REFERANSLARIMIZ</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+<div class="testimonialsline">
+<p style="width:300px; height:15px; margin-top:10px;"><strong>Ekrem AKSOY</strong> , SYM BiliÅŸim Hizmetleri</p>
+</div>
+</div>        
+
+<div class="footer">
+<div class="footerpart1">
+<div class="part1img"></div>
+<p>Yaptigimiz isi seven, isimizde uzman, egitime ve yenilige aÃ§Ä±k, yaptigimiz her projede en iyiyi arayan, tasarimci ve gelistiricilerden olusan bir ekibiz.</p>
+</div>
+<div class="footerpart2">
+<h1>İLETİŞİM BİLGİLERİ
+<div class="addresspart">
+<div class="addressicon"></div>
+<p> BÃ¼yÃ¼kdere Mahallesi Osmangazi Ãœniversitesi TeknoparkÄ± No:4</p>
+<p style="text-align:right;"> OdunpazarÄ±/EskiÅŸehir</p></div>
+<div class="mailpart">
+<div class="mailicon"></div>
+<p> iletisim@sym.com.tr </p>
+</div>
+
+</div>
+
+<div class="footerpart3">
+<h1>SON TWEETLER</h1>
+<div class="footerpat3back">
+<a class="twitter-timeline"  href="https://twitter.com/symsoftware"  data-widget-id="383498114952200192">@SymSoftware kullanÄ±cÄ±sÄ±ndan Tweetler</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>       
+
+<div class="footerdown"></div>
+
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cslider.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			
+				$('#da-slider').cslider();
+				
+			});
+		</script>	
+
+
+</body>
+</html>
