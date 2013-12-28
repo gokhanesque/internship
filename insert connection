@@ -1,0 +1,45 @@
+ //insert connection codes
+ 
+ string Hata = "";
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = @"integrated security=true;server=HP-PC\SQLEXPRESS;database=MYDATABASE";
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand();
+            komut.Connection = baglanti;
+            komut.CommandType = CommandType.StoredProcedure;
+            komut.CommandText = "add_student";
+            
+//kullanıcı adı ve parolası ile giriş
+
+   SqlConnection baglanti = new SqlConnection();
+        SqlCommand komut= new SqlCommand();
+        komut.Connection = baglanti;
+        baglanti.ConnectionString = @"integrated security=true;server=HP-PC\SQLEXPRESS;database=MYDATABASE";
+        baglanti.Open();
+        komut.CommandText = "select parola,sıfre from gırıs where parola = '"+kullanıcıadı.Text+"' and sıfre = "+sifre.Text;
+      
+            komut.CommandType = CommandType.Text;
+
+        string parola = kullanıcıadı.Text;
+        string sıfre = sifre.Text;
+
+            SqlDataReader rdr;
+            rdr = komut.ExecuteReader();
+            int tmp = 0;
+            
+            while (rdr.Read())
+            {
+            tmp = tmp+1;}
+            if (tmp > 0)
+            {
+                Form3 form = new Form3();
+                form.Show();
+                this.Visible = false;
+                this.BringToFront();
+            }
+            else
+                MessageBox.Show("yanlış kullanıcı adı veya parolası");
+            baglanti.Close();
+        
+        }
+       
