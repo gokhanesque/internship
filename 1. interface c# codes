@@ -1,45 +1,57 @@
- //insert connection codes
- 
- string Hata = "";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace WebApplication1
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             SqlConnection baglanti = new SqlConnection();
-            baglanti.ConnectionString = @"integrated security=true;server=HP-PC\SQLEXPRESS;database=MYDATABASE";
+            baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
+            SqlCommand sorgu = new SqlCommand();
+            sorgu.Connection = baglanti;
+            sorgu.CommandType = System.Data.CommandType.Text;
+            sorgu.CommandText = "select * from firm ";
             baglanti.Open();
-            SqlCommand komut = new SqlCommand();
-            komut.Connection = baglanti;
-            komut.CommandType = CommandType.StoredProcedure;
-            komut.CommandText = "add_student";
-            
-//kullanıcı adı ve parolası ile giriş
 
-   SqlConnection baglanti = new SqlConnection();
-        SqlCommand komut= new SqlCommand();
-        komut.Connection = baglanti;
-        baglanti.ConnectionString = @"integrated security=true;server=HP-PC\SQLEXPRESS;database=MYDATABASE";
-        baglanti.Open();
-        komut.CommandText = "select parola,sıfre from gırıs where parola = '"+kullanıcıadı.Text+"' and sıfre = "+sifre.Text;
-      
-            komut.CommandType = CommandType.Text;
+            SqlDataReader read = sorgu.ExecuteReader();
 
-        string parola = kullanıcıadı.Text;
-        string sıfre = sifre.Text;
-
-            SqlDataReader rdr;
-            rdr = komut.ExecuteReader();
-            int tmp = 0;
-            
-            while (rdr.Read())
+            if (read.HasRows)
             {
-            tmp = tmp+1;}
-            if (tmp > 0)
-            {
-                Form3 form = new Form3();
-                form.Show();
-                this.Visible = false;
-                this.BringToFront();
+                while (read.Read())
+                {
+                    if (read[0].ToString() == "1")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label1.Text = value;
+                    }
+                    if (read[0].ToString() == "2")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label2.Text = value;
+                    }
+                    if (read[0].ToString() == "3")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label3.Text = value;
+                    }
+                    if (read[0].ToString() == "4")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label4.Text = value;
+                    }
+                }
             }
-            else
-                MessageBox.Show("yanlış kullanıcı adı veya parolası");
+
+            read.Close();
             baglanti.Close();
-        
         }
-       
+    }
+}
