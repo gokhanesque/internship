@@ -1,20 +1,47 @@
- protected void Button9_Click(object sender, EventArgs e)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+
+namespace WebApplication1
+{
+    public partial class WebForm2 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection baglanti = new SqlConnection();
             baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
             SqlCommand sorgu = new SqlCommand();
             sorgu.Connection = baglanti;
             sorgu.CommandType = System.Data.CommandType.Text;
-            sorgu.CommandText = "select iemail from intern ";
+            sorgu.CommandText = "select * from intern ";
             baglanti.Open();
-            string value = sorgu.ExecuteScalar() as string;
-            baglanti.Close();
-            if (TextBox1.Text.Equals(value))
+
+            SqlDataReader read = sorgu.ExecuteReader();
+
+            if (read.HasRows)
             {
-                TextBox2.Text = "böyle bir veri var";
-            }
-            else
-            {
-                Page.Controls.Add(new LiteralControl("<h2> Kullanıcı adı veya parolasını yanlış girdiniz </h2>"));
+                while (read.Read())
+                {
+                    if(read["iemail"].ToString()==TextBox1.Text && read["psw"].ToString()==TextBox2.Text)
+                    {
+                        string value = read["psw"].ToString();
+                        Response.Redirect("WebForm5.aspx?val="+ value);
+                    }
+                    else
+                    ScriptManager.RegisterStartupScript(this, GetType(), "error","alert('Yanlış kullanıcı adı veya parolası');", true);
+                }
             }
         }
+    }
+}
