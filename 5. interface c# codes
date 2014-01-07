@@ -1,7 +1,52 @@
-SqlCommand ekle = new SqlCommand("add_blog", baglanti);
-                ekle.CommandType = System.Data.CommandType.StoredProcedure;
-                ekle.Parameters.Add("@iemail", SqlDbType.VarChar, 50);
-                ekle.Parameters["@iemail"].Value = TextBox1.Text;
-                ekle.Parameters.Add("@tex", SqlDbType.VarChar, 100);
-                ekle.Parameters["@tex"].Value = TextBox2.Text;
-                ekle.ExecuteNonQuery();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace WebApplication1
+{
+    public partial class WebForm5 : System.Web.UI.Page
+    {
+        string val;
+        string deg;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
+            SqlCommand sorgu = new SqlCommand();
+            sorgu.Connection = baglanti;
+            sorgu.CommandType = System.Data.CommandType.Text;
+            sorgu.CommandText = "select * from intern ";
+            baglanti.Open();
+
+            SqlDataReader read = sorgu.ExecuteReader();
+
+            if (read.HasRows)
+            {
+                while (read.Read())
+                {
+                    deg = Page.Request.QueryString["val"];
+                    if (read["psw"].ToString() == deg)
+                    {
+                        Label1.Text = read["name"].ToString();
+                        Label2.Text = read["surname"].ToString();
+                        Label3.Text = read["school"].ToString();
+                        Label4.Text = read["department"].ToString();
+                        Label5.Text = read["name"].ToString();
+                        Label6.Text = read["surname"].ToString();
+                    }
+                }
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WebForm6.aspx?ece=" + deg);
+        }
+    }
+}
