@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
-namespace evoline
+namespace WebApplication1
 {
-    public partial class Master : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,14 +18,72 @@ namespace evoline
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-              string connetionString = null;
-              SqlConnection cnn = new SqlConnection(@"server=admin-admin\\MSSQL.SQLEXPRESS;Initial Catalog=mydatabase;Integrated security=true;");
-             
-              cnn.Open();
-              SqlCommand sqCom = new SqlCommand();
-              sqCom.Connection = cnn;
-              TextBox1.Text ="Connection open";
-              cnn.Close();
-}
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
+            baglanti.Open();
+
+            if (CheckBox1.Checked == true)
+            {
+                SqlCommand ekle = new SqlCommand("add_intern", baglanti);
+                ekle.CommandType = System.Data.CommandType.StoredProcedure;
+
+                ekle.Parameters.Add("@name", SqlDbType.VarChar, 50);
+                ekle.Parameters["@name"].Value = TextBox1.Text;
+                ekle.Parameters.Add("@surname", SqlDbType.VarChar, 50);
+                ekle.Parameters["@surname"].Value = TextBox2.Text;
+                ekle.Parameters.Add("@iemail", SqlDbType.VarChar, 20);
+                ekle.Parameters["@iemail"].Value = TextBox3.Text;
+                ekle.Parameters.Add("@interntopic", SqlDbType.VarChar, 50);
+                ekle.Parameters["@interntopic"].Value = TextBox6.Text;
+                ekle.Parameters.Add("@school", SqlDbType.VarChar, 50);
+                ekle.Parameters["@school"].Value = TextBox4.Text;
+                ekle.Parameters.Add("@department", SqlDbType.VarChar, 50);
+                ekle.Parameters["@department"].Value = TextBox5.Text;
+                ekle.Parameters.Add("@pwd", SqlDbType.VarChar, 20);
+                ekle.Parameters["@pwd"].Value = TextBox7.Text;
+                ekle.Parameters.Add("@lang", SqlDbType.VarChar, 100);
+
+                if (CheckBox2.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox2.Text;
+                }
+                if (CheckBox3.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox3.Text;
+                } 
+                if (CheckBox4.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox4.Text;
+                } 
+                if (CheckBox5.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox5.Text;
+                } 
+                if (CheckBox6.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox6.Text;
+                } 
+                if (CheckBox7.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox7.Text;
+                } 
+                if (CheckBox8.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox8.Text;
+                }
+                if (CheckBox9.Checked == true)
+                {
+                    ekle.Parameters["@lang"].Value = CheckBox9.Text;
+                }
+
+                ekle.ExecuteNonQuery();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "error", 
+                    "alert('Kullanım Sözleşmesini kabul etmediğiniz takdirde işleminiz gerçekleşmeyecektir');", true);
+            }
+            baglanti.Close();
         }
     }
+}
