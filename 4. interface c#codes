@@ -5,24 +5,57 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
-namespace evoline
+namespace WebApplication1
 {
-    public partial class Master : System.Web.UI.Page
+    public partial class WebForm4 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
+            SqlCommand sorgu = new SqlCommand();
+            sorgu.Connection = baglanti;
+            sorgu.CommandType = System.Data.CommandType.Text;
+            sorgu.CommandText = "select * from firm ";
+            baglanti.Open();
 
-        }
+            SqlDataReader read = sorgu.ExecuteReader();
+            
+            if (read.HasRows)
+            {
+                while(read.Read())
+                {
+                    if (read[0].ToString() == "1")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label1.Text = value;
+                    }
+                    if (read[0].ToString() == "2")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label2.Text = value;
+                    }
+                    if (read[0].ToString() == "3")
+                    {
+                        string value = read["firmname"].ToString();
+                        Label3.Text = value;
+                    }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-              
-              SqlConnection baglanti = new SqlConnection();
-              baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
-              baglanti.Open();
-              TextBox1.Text ="Connection open";
-              baglanti.Close();
-}
+                }
+            }
+
+            read.Close();
+            baglanti.Close();
+
+            SqlDataAdapter da = new SqlDataAdapter(sorgu);
+            DataSet sqlSet = new DataSet();
+            da.Fill(sqlSet);
+            DropDownList1.DataTextField = sqlSet.Tables[0].Columns["firmname"].ToString();
+            DropDownList1.DataSource = sqlSet.Tables[0];
+            DropDownList1.DataBind();
+                    
         }
     }
+}
