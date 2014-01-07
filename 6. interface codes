@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace WebApplication1
+{
+    public partial class WebForm6 : System.Web.UI.Page
+    {
+        string ece;
+        string el;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = @"integrated security=true;server=admin-admin\MSSQL;database=mydatabase";
+            SqlCommand sorgu = new SqlCommand();
+            sorgu.Connection = baglanti;
+            sorgu.CommandType = System.Data.CommandType.Text;
+            sorgu.CommandText = "select * from intern ";
+            baglanti.Open();
+            el = Page.Request.QueryString["ece"];
+
+            SqlDataReader read = sorgu.ExecuteReader();
+            if (read.HasRows)
+            {
+                while (read.Read())
+                {
+                    if (read["psw"].ToString() == el)
+                    {
+                        SqlCommand ekle = new SqlCommand("add_intern", baglanti);
+                        ekle.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        ekle.Parameters.Add("@name", SqlDbType.VarChar, 50);
+                        ekle.Parameters["@name"].Value = TextBox1.Text;
+                        ekle.Parameters.Add("@surname", SqlDbType.VarChar, 50);
+                        ekle.Parameters["@surname"].Value = TextBox2.Text;
+                        ekle.Parameters.Add("@iemail", SqlDbType.VarChar, 20);
+                        ekle.Parameters["@iemail"].Value = TextBox3.Text;
+                        ekle.Parameters.Add("@interntopic", SqlDbType.VarChar, 50);
+                        ekle.Parameters["@interntopic"].Value = TextBox6.Text;
+                        ekle.Parameters.Add("@school", SqlDbType.VarChar, 50);
+                        ekle.Parameters["@school"].Value = TextBox4.Text;
+                        ekle.Parameters.Add("@department", SqlDbType.VarChar, 50);
+                        ekle.Parameters["@department"].Value = TextBox5.Text;
+                        ekle.Parameters.Add("@pwd", SqlDbType.VarChar, 20);
+                        ekle.Parameters["@pwd"].Value = TextBox7.Text;
+                        ekle.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+ 
+    }
+}
